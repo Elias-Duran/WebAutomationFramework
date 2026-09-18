@@ -1,15 +1,16 @@
 package tests;
 
+import base.BaseTest;
 import driver.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
-public class PrimerTest {
+public class PrimerTest extends BaseTest {
 
-    public static void main(String[] args) {
-
-        DriverFactory.createDriver();
+    @Test
+    public void abrirGooGle(){
         DriverFactory.getDriver().get("https://www.google.com");
-        DriverFactory.quitDriver();
+        System.out.printf("URL: " + DriverFactory.getDriver().getCurrentUrl());
     }
 }
